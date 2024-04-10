@@ -16,10 +16,19 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true
+    },
+    domainWhiteList: [ '*' ], // 配置白名单
+  }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
   };
+
+  
 
   return {
     ...config,
