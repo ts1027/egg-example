@@ -23,10 +23,28 @@ module.exports = appInfo => {
     },
     domainWhiteList: [ '*' ], // 配置白名单
   }
+  config.view = {
+    mapping: {'.html': 'ejs'}  //左边写成.html后缀，会自动渲染.html文件
+  };
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
   };
+
+  config.mysql = {
+    client: {
+      host: 'localhost',
+      port: '3306',
+      user: 'root',
+      password: '12345678',
+      database: 'test'
+    },
+    // 是否加载到app上
+    app: true,
+    // 是否加载到agent上，默认关闭
+    agent:false
+  }
+  
 
   
 
@@ -35,3 +53,4 @@ module.exports = appInfo => {
     ...userConfig,
   };
 };
+

@@ -1,21 +1,22 @@
 const { Controller } = require('egg');
-// fdsafds 
+// fdsafds
 class HomeController extends Controller {
   // 注释
   async index() {
     const { ctx } = this;
-    const { id } = ctx.query
-    ctx.body = id;
+    await ctx.render('index.html', {
+      title: '我是不磕碜',
+    });
   }
   async user() {
     const { ctx } = this;
-    const { id } = ctx.params
-    ctx.body = id;
+    const result = await ctx.service.home.user();
+    ctx.body = result;
   }
   async add() {
     const { ctx } = this;
-    const { title } = ctx.request.body
-    ctx.body = {title};
+    const { title } = ctx.request.body;
+    ctx.body = { title };
   }
 }
 
