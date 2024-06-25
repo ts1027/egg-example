@@ -7,10 +7,18 @@ module.exports = {
   // 模板
   ejs: {
     enable: true,
-    package: 'egg-view-ejs'
+    package: 'egg-view-ejs',
   },
   mysql: {
     enable: true,
-    package: 'egg-mysql'
-  }
+    package: 'egg-mysql',
+  },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt',
+  },
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
 };
